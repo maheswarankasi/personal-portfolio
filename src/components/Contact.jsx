@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope, FaPhone } from "react-icons/fa";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -87,7 +87,7 @@ const Contact = () => {
           </form>
           <div className="mail-phone">
             <p>
-              <span className="mail-icon">&#9993;</span>{" "}
+            <FaEnvelope size={24} color="#fff" />
               <a href="mailto:maheswarankasi@gmail.com" target="_blank">
                 maheswarankasi@gmail.com
               </a>
@@ -109,7 +109,7 @@ const Contact = () => {
               </a>
             </p>
             <p>
-              <span className="call-icon">&#128222;</span>{" "}
+            <FaPhone size={24} color="#fff" />  
               <a href="tel:+91 812 454 5697" target="_blank">
                 (+91) 812 454 5697
               </a>
