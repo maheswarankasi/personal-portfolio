@@ -1,27 +1,32 @@
-import { useState } from "react";
 import "./App.css";
 import Home from "./components/Home";
-import { BrowserRouter } from "react-router-dom";
 import ErrorBoundary from "./containers/ErrorBoundary/ErrorBoundary";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Skills from "./components/Skills";
 import ScrollToTop from "./components/ScrollToTop";
+import Projects from "./components/Projects";
+import ScrollReveal from "./components/ScrollReveal";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <BrowserRouter>
-        <ErrorBoundary>
-          <Home />
+      <ErrorBoundary>
+        <Home />
+        <ScrollReveal>
           <About />
+        </ScrollReveal>
+        <ScrollReveal>
           <Skills />
+        </ScrollReveal>
+        <ScrollReveal>
+          <Projects />
+        </ScrollReveal>
+        <ScrollReveal>
           <Contact />
-          <ScrollToTop />
-        </ErrorBoundary>
-      </BrowserRouter>
+        </ScrollReveal>
+        <ScrollToTop />
+      </ErrorBoundary>
     </>
   );
 }
