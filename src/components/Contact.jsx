@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import { FaLinkedin, FaGithub, FaEnvelope, FaPhone } from "react-icons/fa";
+import { SiWhatsapp } from "react-icons/si";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState("idle");
 
   const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+
+  const phone = "8124545697";
+  const text = encodeURIComponent(
+    "Hi, I want to know more about your services"
+  );
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -32,7 +38,7 @@ const Contact = () => {
     <>
       <section id="contact" className="contact">
         <div className="container">
-          <h2>Contact Me</h2>
+          <h2>Get In Touch</h2>
           <p className="contact-subtitle">
             Feel free to reach out for opportunities or inquiries. I’m excited
             to discuss new projects or full‑time roles where I can contribute my
@@ -87,14 +93,14 @@ const Contact = () => {
           </form>
           <div className="mail-phone">
             <p>
-            <FaEnvelope size={24} color="#fff" />
+              <FaEnvelope size={24} color="#fff" aria-label="email" />
               <a href="mailto:maheswarankasi@gmail.com" target="_blank">
                 maheswarankasi@gmail.com
               </a>
             </p>
             <p>
               <span>
-                <FaLinkedin />
+                <FaLinkedin size={24} color="#fff" aria-label="LinkedIn" />
               </span>{" "}
               <a href="https://linkedin.com/in/maheswaran-kasi" target="_blank">
                 LinkedIn
@@ -102,15 +108,21 @@ const Contact = () => {
             </p>
             <p>
               <span>
-                <FaGithub />
+                <FaGithub size={24} color="#fff" aria-label="GitHub" />
               </span>{" "}
               <a href="https://github.com/maheswarankasi" target="_blank">
                 GitHub
               </a>
             </p>
             <p>
-            <FaPhone size={24} color="#fff" />  
-              <a href="tel:+91 812 454 5697" target="_blank">
+              <FaPhone size={24} color="#fff" aria-label="Phone" />
+              <a href={`tel:${phone}`} target="_blank">
+                (+91) 812 454 5697
+              </a>
+            </p>
+            <p>
+              <SiWhatsapp size={24} color="#fff" aria-label="Whatsapp" />
+              <a href={`https://wa.me/${phone}?text=${text}`} target="_blank">
                 (+91) 812 454 5697
               </a>
             </p>

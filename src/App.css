@@ -48,7 +48,7 @@ h2 {
   position: fixed;
   bottom: 40px;
   right: 40px;
-  background-color: #007bff;
+  background-color: #ff6b00;
   color: white;
   border: none;
   padding: 7px 16px;
@@ -85,10 +85,8 @@ h2 {
   border-right: 0.15em solid orange;
   white-space: nowrap;
   width: 0;
-  animation:
-    typingName 2s steps(15, end) forwards,
-    blink 0.75s step-end infinite,
-    fadeOut 0.4s ease forwards;
+  animation: typingName 2s steps(15, end) forwards,
+    blink 0.75s step-end infinite, fadeOut 0.4s ease forwards;
   animation-delay: 0s, 0s, 3.5s;
 }
 /* Role typing */
@@ -103,8 +101,7 @@ h2 {
   opacity: 0;
   position: relative;
   top: -48px;
-  animation:
-    typingRole 2s steps(12, end) forwards,
+  animation: typingRole 2s steps(12, end) forwards,
     blink 0.75s step-end infinite;
   animation-delay: 4.5s;
 }
@@ -182,7 +179,23 @@ h2 {
 #skills .container {
   width: 100%;
 }
-.skills-slider {
+#skills .skills-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.skills-container p {
+  padding: 5px 24px;
+  border: 1px solid #ff6b00;
+  margin: 10px;
+  border-radius: 20px;
+  background-color: #4c3220;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+/* .skills-slider {
   max-width: 750px;
   margin: 0 auto;
 }
@@ -206,7 +219,7 @@ h2 {
 .fill {
   background: #007bff;
   height: 100%;
-}
+} */
 /* =========================
    Projects
 ========================= */
@@ -221,11 +234,11 @@ h2 {
 .card {
   max-width: 300px;
   padding: 20px;
-  height: 480px;
+  height: 516px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  gap: 15px;
+  gap: 10px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(14px);
@@ -245,7 +258,7 @@ h2 {
   font-size: 0.9rem;
 }
 .card .btn {
-  background: #3b7385;
+  background: #ff6b00;
   width: 65%;
   margin: 0 auto;
   padding: 10px;
@@ -262,7 +275,7 @@ h2 {
   transition: all 0.3s ease-in-out;
 }
 .card .btn:hover {
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55), 0 0 32px rgba(250, 123, 3, 0.18);
   transform: scale(1.01);
 }
 .card a {
@@ -278,6 +291,26 @@ h2 {
 .card a svg {
   width: 20px;
   height: 20px;
+}
+.tech-stack {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.tech-stack p {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-right: 10px;
+}
+.tech-stack small {
+  font-size: 0.7rem;
+  padding: 2px 10px;
+  border: 1px solid #ff6b00;
+  border-radius: 20px;
+  margin-right: 5px;
+  margin-bottom: 5px;
 }
 /* =========================
    Contact
@@ -313,9 +346,7 @@ h2 {
   color: rgba(255, 255, 255, 0.92);
   padding: 14px 16px;
   outline: none;
-  transition:
-    border-color 0.25s ease,
-    box-shadow 0.25s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 .contact-input::placeholder,
 .contact-textarea::placeholder {
@@ -332,9 +363,8 @@ h2 {
   font-weight: 600;
 }
 .btn-primary {
-  background: linear-gradient(118deg, #000 20%, #1a1a2e 50%, #00ff87 126%);
-  box-shadow:
-    0 10px 22px rgba(0, 0, 0, 0.45),
+  background: #ff6b00;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.45),
     inset 0 0 0 1px rgba(255, 255, 255, 0.1);
   transition: all 0.5s ease-in-out;
   border-radius: 20px;
@@ -342,12 +372,10 @@ h2 {
   padding: 10px 18px;
 }
 .btn-primary:hover {
-  background: linear-gradient(118deg, #00ff87 20%, #1a1a2e 50%, #000 126%);
+  /* background: transparent;
+  border: 1px solid #ff0077; */
   transform: translateY(-2px);
-  box-shadow:
-    0 16px 36px rgba(0, 0, 0, 0.55),
-    0 0 0 4px rgba(124, 58, 237, 0.18),
-    0 0 32px rgba(255, 45, 168, 0.18);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55), 0 0 32px rgba(250, 123, 3, 0.18);
   filter: saturate(1.08);
 }
 .btn-primary:active {
@@ -435,6 +463,9 @@ h2 {
   }
   .hero {
     padding: 0;
+  }
+  .role {
+    top: -30px;
   }
   .typewriter {
     font-size: 28px;
